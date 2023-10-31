@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, effect, signal } from '@angular/core';
 import { Producto} from './model/products.model';
 import { initFlowbite } from 'flowbite';
 
@@ -11,10 +11,21 @@ import { initFlowbite } from 'flowbite';
 export class AppComponent implements OnInit{
   title = 'AmazonClone';
 
-  constructor(private http: HttpClient) {}
-
   ngOnInit(): void {
     initFlowbite();
+  }
+
+  constructor(private http: HttpClient) {
+    effect(()=>{
+      window.localStorage.setItem('darkMode', JSON.stringify(this.darkMode()))
+    })
+  }
+
+  // darkMode = signal<boolean>(false)
+  darkMode = signal<boolean>(JSON.parse(window.localStorage.getItem('darkMode') ?? 'false'))
+
+  @HostBinding('class.dark') get mode(){
+    return this.darkMode()
   }
 
 
