@@ -1,12 +1,2 @@
-<app-header></app-header>
-<!-- <div class ="min-h-screen min-w-full bg-slate-200 dark:bg-slate-700">
+<app-header (mainHeaderDarkMode) = 'getMainHeaderDarkMode($event)'></app-header>
 
-  <div class="flex justfify-between items-center bg-teal-600 text-white p-5 font-semibold text-lg shadow-lg dark:bg-slate-900">
-    Dark mode with angular and tailwind
-    <button (click)="darkMode.set(!darkMode())" class="felx transition-transform hover:scale-125 aling-middle">
-      <span *ngIf="!darkMode()" class = "material-icons">dark_mode</span>
-      <span *ngIf="darkMode()" class = "material-icons">light_mode</span>
-    </button>
-  </div>
-
-</div> -->
