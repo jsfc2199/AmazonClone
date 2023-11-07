@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { SubHeaderComponent } from './header/sub-header/sub-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DarkModeComponent } from './header/dark-mode/dark-mode.component';
+import { SidebarComponent } from './header/sub-header/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     AppComponent,
     MainHeaderComponent,
     HeaderComponent,
-    SubHeaderComponent
+    SubHeaderComponent,
+    DarkModeComponent,
+    SidebarComponent
   ],
   imports: [
 

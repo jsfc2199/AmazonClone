@@ -11,14 +11,10 @@ export class MainHeaderComponent implements OnInit{
     initFlowbite();
   }
 
-  @Output() mainHeaderDarkMode = new EventEmitter<boolean>()
+  @Output() darkModeToggle = new EventEmitter<boolean>()
 
-  darkMode: boolean = JSON.parse(window.localStorage.getItem('darkMode') ?? 'false')
-
-  toggleMainHeaderDarkMode(){
-    this.darkMode = !this.darkMode;
-    this.mainHeaderDarkMode.emit(this.darkMode);
-    window.localStorage.setItem('darkMode', JSON.stringify(this.darkMode))
+  sendDarkModoToHeader(event: boolean){
+    this.darkModeToggle.emit(event);
   }
 
 }

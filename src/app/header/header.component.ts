@@ -7,9 +7,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
 
-  @Output() mainHeaderDarkMode = new EventEmitter<boolean>()
+  @Output() darkModeToggle = new EventEmitter<boolean>()
 
   sendDarkModoToApp(event: boolean){
-    this.mainHeaderDarkMode.emit(event);
+    this.darkModeToggle.emit(event)
   }
 }
