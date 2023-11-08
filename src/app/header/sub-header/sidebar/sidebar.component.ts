@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostListener, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
+import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,11 +11,11 @@ export class SidebarComponent {
 
   @HostListener('document:click', ['$event'])
   clickOutside(event: Event) {
-    const drawerBackdrops = document.querySelectorAll('div[drawer-backdrop]');
+    const drawerBackdropsElements = document.querySelectorAll('div[drawer-backdrop]');
+    const isSideBarElement = this.elementRef.nativeElement.contains(event.target)
 
-    if (!this.elementRef.nativeElement.contains(event.target) && drawerBackdrops.length > 0) {
-
-      drawerBackdrops.forEach(backdrop => {
+    if (!isSideBarElement && drawerBackdropsElements.length > 0) {
+      drawerBackdropsElements.forEach(backdrop => {
         if (document.body.contains(backdrop)) {
           this.renderer.removeChild(document.body, backdrop);
         }

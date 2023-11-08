@@ -8,13 +8,6 @@ import { initFlowbite } from 'flowbite';
 })
 export class MainHeaderComponent implements OnInit{
   ngOnInit(): void {
-    initFlowbite();
+    
   }
-
-  @Output() darkModeToggle = new EventEmitter<boolean>()
-
-  sendDarkModoToHeader(event: boolean){
-    this.darkModeToggle.emit(event);
-  }
-
 }
